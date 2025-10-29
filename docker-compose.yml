@@ -1,0 +1,62 @@
+version: "3.1"
+
+services:
+  jogos:
+    build: .
+    image: jogos-service
+    container_name: jogos
+    hostname: jogos
+    restart: always
+    volumes:
+      - ./app/jogos:/servico
+    command: python3 /servico/servico.py
+    ports:
+      - 5001:5000
+
+  comentarios:
+    build: .
+    image: comentarios-service
+    container_name: comentarios
+    hostname: comentarios
+    restart: always
+    volumes:
+      - ./app/comentarios:/servico
+    command: python3 /servico/servico.py
+    ports:
+      - 5002:5000
+
+  votacao:
+    build: .
+    image: votacao-service
+    container_name: votacao
+    hostname: votacao
+    restart: always
+    volumes:
+      - ./app/votacao:/servico
+    command: python3 /servico/servico.py
+    ports:
+      - 5003:5000
+
+  banco_jogos:
+    image: memcached
+    container_name: banco_jogos
+    hostname: banco_jogos
+    restart: always
+    ports:
+      - 11211:11211
+
+  banco_comentarios:
+    image: memcached
+    container_name: banco_comentarios
+    hostname: banco_comentarios
+    restart: always
+    ports:
+      - 11212:11211
+
+  banco_votacao:
+    image: memcached
+    container_name: banco_votacao
+    hostname: banco_votacao
+    restart: always
+    ports:
+      - 11213:11211
