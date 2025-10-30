@@ -3,7 +3,7 @@
 Este projeto demonstra uma arquitetura de microsserviços para gerenciar informações de jogos de futebol, comentários e votos. Ele consiste em três microsserviços principais: `jogos`, `comentarios` e `votacao`, juntamente com um cliente baseado em linha de comando.
 
 ## Video explicativo
-[Clique aqui para assistir o video](midia/2025-10-31 13-12-00.mov)
+[Clique aqui para assistir o video](https://SEU-USUARIO-GITHUB.github.io/NOME-DO-REPOSITORIO/video.html)
 
 ## Microsserviços
 
